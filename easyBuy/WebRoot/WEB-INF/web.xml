@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>easyBuy</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>crm/index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>com.softeem.easybuy.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GoodsServlet</display-name>
+    <servlet-name>GoodsServlet</servlet-name>
+    <servlet-class>com.softeem.easybuy.controller.GoodsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoodsServlet</servlet-name>
+    <url-pattern>/goods</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CategoryServlet</display-name>
+    <servlet-name>CategoryServlet</servlet-name>
+    <servlet-class>com.softeem.easybuy.controller.CategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CategoryServlet</servlet-name>
+    <url-pattern>/category</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartServlet</display-name>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>com.softeem.easybuy.controller.CartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CategoryProvider</servlet-name>
+    <servlet-class>com.softeem.easybuy.app.provider.CategoryProvider</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoodsProvider</servlet-name>
+    <servlet-class>com.softeem.easybuy.app.provider.GoodsProvider</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CustomerProvider</servlet-name>
+    <servlet-class>com.softeem.easybuy.app.provider.CustomerProvider</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CategoryProvider</servlet-name>
+    <url-pattern>/app/category</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoodsProvider</servlet-name>
+    <url-pattern>/app/goods</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerProvider</servlet-name>
+    <url-pattern>/app/user</url-pattern>
+  </servlet-mapping>
+</web-app>
